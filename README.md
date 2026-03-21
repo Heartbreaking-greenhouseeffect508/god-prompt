@@ -4,7 +4,7 @@ Default AI is lazy. It hallucinates, it skips verification, and it says "Let's d
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blueviolet)](https://docs.anthropic.com)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/AKzar1el/GodPrompt/issues)
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](CHANGELOG.md)
 
 > One skill to replace them all. Drop it in, describe what you want, get production-grade output.
@@ -34,8 +34,8 @@ git clone https://github.com/AKzar1el/GodPrompt.git .claude/skills/god-prompt
 
 **Option C — Claude.ai Projects**
 1. Create a new Claude Project
-2. Add `core/00-THE-SKILL.md` contents as Project Instructions
-3. Upload the 3 reference files as Project Knowledge
+2. Add `00-THE-SKILL.md` contents as Project Instructions
+3. Upload the 3 reference files (`01-PROTOCOLS.md`, `02-GATES.md`, `03-ANTI-PATTERNS.md`) as Project Knowledge
 
 **Then just use Claude normally.** No special commands, no mode switching, no skill invocations. GodPrompt activates automatically on every task.
 
@@ -83,27 +83,26 @@ GodPrompt detects 9 task types and routes to the right protocol:
 
 ```
 GodPrompt/
-├── GodPrompt.md            # All-in-one file for quick deployment
+├── GodPrompt.md              # All-in-one file for quick deployment (1,145 lines)
+├── 00-THE-SKILL.md           # Core skill — always in context (248 lines)
+├── 01-PROTOCOLS.md           # Deep execution guides per task type (373 lines)
+├── 02-GATES.md               # Verification checklists & report templates (309 lines)
+├── 03-ANTI-PATTERNS.md       # Red flags, rationalizations, recovery (201 lines)
 ├── README.md
-├── CONTRIBUTING.md
 ├── CHANGELOG.md
 ├── LICENSE
-│
-└── references/                       # Loaded on-demand, saves context tokens
-    ├── protocols.md (373 lines)      # Deep execution guides per task type
-    ├── anti-patterns.md (201 lines)  # Red flags, rationalizations, recovery
-    └── quality-gates.md (309 lines)  # Verification checklists, report templates
+└── VERSION
 ```
 
-**Total: ~41KB / 1,148 lines** — synthesized from 30+ battle-tested skills and hundreds of real coding sessions.
+**Total: ~41KB / 1,145 lines** — synthesized from 30+ battle-tested skills and hundreds of real coding sessions.
 
 ### Progressive Disclosure Architecture
 
 This is the key design advantage over multi-skill systems:
 
 - **00-THE-SKILL.md** (248 lines) loads every message → low token cost, covers 90% of tasks
-- **references/** load only when Claude needs deep protocol detail → saves tokens on simple tasks
-- **Combined file** exists for environments that don't support folder structures
+- **01-PROTOCOLS.md**, **02-GATES.md**, **03-ANTI-PATTERNS.md** load only when Claude needs deep protocol detail → saves tokens on simple tasks
+- **GodPrompt.md** exists as a combined single file for environments that don't support folder structures
 
 A 34-skill system loads the wrong skill (or none) half the time. GodPrompt loads the right rules every time, and only goes deep when the task requires it.
 
@@ -156,7 +155,7 @@ Three design insights:
 
 2. **Quality failures have patterns** — they're almost always: skipping the understand phase, changing things outside scope, or claiming completion without verification. The Three Iron Laws prevent all three.
 
-3. **Progressive disclosure beats upfront complexity** — 248 lines in context, 1,148 when you need depth. Never all-or-nothing.
+3. **Progressive disclosure beats upfront complexity** — 248 lines in context, 1,145 when you need depth. Never all-or-nothing.
 
 ## Roadmap
 
