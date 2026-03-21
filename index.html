@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>God Prompt | The Ultimate LLM System Instruction</title>
+    <meta name="title" content="God Prompt | The Ultimate LLM System Instruction">
+    <meta name="description" content="Unlock the full potential of ChatGPT, Claude, and Gemini. The God Prompt is an open-source, advanced system instruction framework for maximum AI reasoning and zero fluff.">
+    <meta name="keywords" content="god prompt, prompt engineering, system prompt, LLM jailbreak, ChatGPT instructions, Claude 3 prompt, AI reasoning, generative AI, GitHub open source">
+    <meta name="author" content="AKzar1el">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://akzar1el.github.io/god-prompt/">
+    <meta name="theme-color" content="#0B0F19">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://akzar1el.github.io/god-prompt/">
+    <meta property="og:site_name" content="God Prompt Framework">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="God Prompt | The Ultimate LLM System Instruction">
+    <meta property="og:description" content="Unlock the full potential of ChatGPT, Claude, and Gemini. An advanced system instruction framework for maximum AI reasoning.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image:alt" content="Glowing artificial intelligence brain representing advanced LLM reasoning">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://akzar1el.github.io/god-prompt/">
+    <meta property="twitter:title" content="God Prompt | The Ultimate LLM System Instruction">
+    <meta property="twitter:description" content="Unlock the full potential of ChatGPT, Claude, and Gemini with this advanced open-source prompt framework.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80">
+    <meta property="twitter:image:alt" content="Glowing artificial intelligence brain representing advanced LLM reasoning">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "God Prompt | The Ultimate LLM System Instruction",
+      "description": "An open-source, advanced system instruction framework for maximum AI reasoning and zero fluff across ChatGPT, Claude, and Gemini.",
+      "url": "https://akzar1el.github.io/god-prompt/",
+      "author": {
+        "@type": "Person",
+        "name": "AKzar1el",
+        "url": "https://github.com/AKzar1el"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "God Prompt",
+      "operatingSystem": "All",
+      "applicationCategory": "DeveloperApplication",
+      "description": "An advanced system instruction framework for LLMs designed to enhance reasoning and eliminate output fluff.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "AKzar1el",
+        "url": "https://github.com/AKzar1el"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Is the God Prompt completely free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The God Prompt is 100% open-source and free to use. It is maintained by the community on GitHub under the MIT License."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Which AI models does this work with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is highly optimized for flagship tier models including OpenAI's GPT-4, Anthropic's Claude 3 (Opus and Sonnet), and Google's Gemini Advanced. It also works exceptionally well with open-source models like Llama 3."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I modify the prompt for my specific workflow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. The God Prompt is designed as a modular framework. We encourage you to fork the repository, tweak the personality traits, or add specific constraints that fit your exact use case."
+        }
+      }]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        dark: '#0B0F19',
+                        darker: '#05070A',
+                        primary: '#8B5CF6',
+                        secondary: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0B0F19; color: #e2e8f0; }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #8B5CF6, #3B82F6);
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow:hover {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+        }
+        #toast {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px) translateX(-50%);
+            pointer-events: none;
+        }
+        #toast.show {
+            opacity: 1;
+            transform: translateY(0) translateX(-50%);
+        }
+        /* Custom hide for standard HTML details marker */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-primary selection:text-white">
+
+    <div id="toast" class="fixed bottom-5 left-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg font-semibold z-50">
+        <i class="fa-solid fa-check mr-2"></i> Prompt copied to clipboard!
+    </div>
+
+    <main class="flex-grow flex flex-col items-center justify-center px-4 pt-20 pb-12">
+        
+        <header class="text-center max-w-4xl mx-auto mb-16 animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-gray-300 mb-6">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                v1.0 is Live on GitHub
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-white">
+                The <span class="text-gradient">God Prompt</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Bypass standard guardrail fluff. Force deep, analytical reasoning. The ultimate open-source system instruction framework for GPT-4, Claude 3, and Gemini.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="copyPrompt()" class="bg-primary hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg shadow-[0_0_15px_rgba(139,92,246,0.5)] transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-copy"></i> Copy Prompt
+                </button>
+                <a href="https://github.com/AKzar1el/god-prompt" target="_blank" class="glass-card hover:bg-white/10 text-white font-bold py-3 px-8 rounded-lg transition-all flex items-center justify-center gap-2 glow">
+                    <i class="fa-brands fa-github text-xl"></i> Star on GitHub
+                </a>
+            </div>
+        </header>
+
+        <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 w-full">
+            <div class="glass-card p-8 rounded-2xl glow transition-all duration-300">
+                <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-6 text-primary">
+                    <i class="fa-solid fa-brain text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Chain of Thought</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Forces the model to think step-by-step before answering, drastically reducing hallucinations and logical errors.</p>
+            </div>
+            
+            <div class="glass-card p-8 rounded-2xl glow transition-all duration-300">
+                <div class="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-6 text-secondary">
+                    <i class="fa-solid fa-shield-halved text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Zero Fluff</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Strictly bans apologies, preachy disclaimers, and unnecessary conversational filler. Just pure, unfiltered answers.</p>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl glow transition-all duration-300">
+                <div class="w-12 h-12 rounded-lg bg-green-500/20 flex items-center justify-center mb-6 text-green-400">
+                    <i class="fa-solid fa-microchip text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Model Agnostic</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Carefully engineered syntax that works flawlessly across OpenAI, Anthropic, and Google's flagship models.</p>
+            </div>
+        </section>
+
+        <section class="max-w-4xl w-full mx-auto mb-20">
+            <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-800">
+                <div class="bg-darker px-4 py-3 border-b border-gray-800 flex items-center justify-between">
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <span class="text-xs text-gray-500 font-mono">system_instruction.txt</span>
+                </div>
+                <div class="bg-dark p-6 relative group">
+                    <button onclick="copyPrompt()" class="absolute top-4 right-4 text-gray-400 hover:text-white bg-gray-800/50 p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                    <textarea id="promptText" class="hidden">You are an advanced analytical engine. 
+Rule 1: Never apologize. 
+Rule 2: Think step-by-step before outputting the final answer.
+Rule 3: Cut the fluff. No preachy disclaimers. 
+Execute.</textarea>
+                    
+                    <pre class="font-mono text-sm text-gray-300 whitespace-pre-wrap leading-relaxed">
+<span class="text-primary"># THE GOD PROMPT</span>
+
+<span class="text-blue-400">Role:</span> You are an advanced analytical engine.
+<span class="text-blue-400">Constraints:</span>
+  - Never apologize.
+  - Think step-by-step before outputting the final answer.
+  - Cut the fluff. No preachy disclaimers.
+
+<span class="text-gray-500">/* Note: See the GitHub repo for the full, extended version */</span>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl w-full mx-auto mb-20">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">Who is the God Prompt for?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-darker border border-gray-800 p-6 rounded-xl flex items-start gap-4">
+                    <i class="fa-solid fa-code text-primary text-xl mt-1"></i>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Software Developers</h4>
+                        <p class="text-sm text-gray-400">Force the LLM to output clean, raw code without repeating standard documentation or adding unhelpful "Here is your code!" pleasantries.</p>
+                    </div>
+                </div>
+                <div class="bg-darker border border-gray-800 p-6 rounded-xl flex items-start gap-4">
+                    <i class="fa-solid fa-pen-nib text-secondary text-xl mt-1"></i>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Content Writers & SEO</h4>
+                        <p class="text-sm text-gray-400">Prevent the AI from using generic, robotic vocabulary. Structure outputs with precise formatting, Markdown, and targeted keyword density.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl w-full mx-auto mb-20 bg-darker border border-gray-800 rounded-2xl p-8 lg:p-10">
+            <h2 class="text-2xl font-bold text-white mb-6">How to configure your LLM</h2>
+            <div class="space-y-6">
+                <div class="flex gap-4 items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <p class="text-gray-300">Click the <strong class="text-white">Copy Prompt</strong> button at the top of this page.</p>
+                </div>
+                <div class="flex gap-4 items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <p class="text-gray-300">Open your AI tool of choice (e.g., ChatGPT Settings, Claude Projects, or Gemini Advanced).</p>
+                </div>
+                <div class="flex gap-4 items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <p class="text-gray-300">Paste the text into the <strong class="text-white">"Custom Instructions"</strong> or <strong class="text-white">"System Prompt"</strong> field and save.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl w-full mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                
+                <details class="group bg-darker border border-gray-800 rounded-lg p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-white">
+                        <span>Is the God Prompt completely free?</span>
+                        <span class="transition group-open:rotate-180 text-primary">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed text-sm">Yes. The God Prompt is 100% open-source and free to use. It is maintained by the community on GitHub under the MIT License.</p>
+                </details>
+
+                <details class="group bg-darker border border-gray-800 rounded-lg p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-white">
+                        <span>Which AI models does this work with?</span>
+                        <span class="transition group-open:rotate-180 text-primary">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed text-sm">It is highly optimized for flagship tier models including OpenAI's GPT-4, Anthropic's Claude 3 (Opus and Sonnet), and Google's Gemini Advanced. It also works exceptionally well with open-source models like Llama 3.</p>
+                </details>
+
+                <details class="group bg-darker border border-gray-800 rounded-lg p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-white">
+                        <span>Can I modify the prompt for my specific workflow?</span>
+                        <span class="transition group-open:rotate-180 text-primary">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed text-sm">Absolutely. The God Prompt is designed as a modular framework. We encourage you to fork the repository, tweak the personality traits, or add specific constraints that fit your exact use case.</p>
+                </details>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-white/10 mt-12 py-8 text-center text-gray-500 text-sm">
+        <p>Built for the AI community by <a href="https://github.com/AKzar1el" class="text-white hover:text-primary transition-colors">AKzar1el</a>. MIT License.</p>
+    </footer>
+
+    <script>
+        function copyPrompt() {
+            // Get the text from the hidden textarea
+            const promptText = document.getElementById("promptText").value;
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(promptText).then(() => {
+                // Show toast
+                const toast = document.getElementById("toast");
+                toast.classList.add("show");
+                
+                // Hide toast after 3 seconds
+                setTimeout(() => {
+                    toast.classList.remove("show");
+                }, 3000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert("Failed to copy. Please manually copy from the repository.");
+            });
+        }
+    </script>
+</body>
+</html>
