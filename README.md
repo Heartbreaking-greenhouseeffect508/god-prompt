@@ -67,7 +67,7 @@ Every task — from fixing a typo to architecting a system — flows through the
 
 ### Auto-Classification
 
-GodPrompt detects 9 primary task types and routes to the right protocol. Simple lookups fall through to a direct `ANSWER` path.
+GodPrompt detects 9 primary task types and routes to the right protocol. Simple lookups fall through to a direct ANSWER path.
 
 | Task Type | Triggers On | Key Protocol |
 |-----------|------------|--------------|
