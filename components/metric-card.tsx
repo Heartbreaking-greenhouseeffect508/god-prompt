@@ -16,8 +16,9 @@ export function MetricCard({
   icon: Icon,
   subtitle,
 }: MetricCardProps) {
-  const isPositive = change && change > 0;
-  const isNegative = change && change < 0;
+  const hasChange = change !== undefined;
+  const isPositive = change > 0;
+  const isNegative = change < 0;
 
   return (
     <div className="rounded-lg border border-border bg-card p-5">
@@ -25,9 +26,9 @@ export function MetricCard({
         <div>
           <p className="text-sm text-muted-foreground">{title}</p>
           <p className="mt-2 text-2xl font-semibold text-foreground">{value}</p>
-          {(change !== undefined || subtitle) && (
+          {(hasChange || subtitle) && (
             <div className="mt-2 flex items-center gap-2">
-              {change !== undefined && (
+              {hasChange && (
                 <span
                   className={cn(
                     "flex items-center text-sm font-medium",

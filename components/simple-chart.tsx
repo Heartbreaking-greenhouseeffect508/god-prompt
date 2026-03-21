@@ -26,7 +26,7 @@ export function SimpleChart({
   color = "primary",
   suffix = "",
 }: SimpleChartProps) {
-  const maxValue = Math.max(...data.map((d) => d.value));
+  const maxValue = Math.max(1, ...data.map((d) => d.value));
   const currentValue = data[data.length - 1]?.value ?? 0;
 
   return (
