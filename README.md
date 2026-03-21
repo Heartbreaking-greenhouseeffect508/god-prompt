@@ -1,6 +1,6 @@
 # GodPrompt
 
-Default AI is lazy. It hallucinates, it skips verification, and it says "Let's delve" while writing bad code. GodPrompt is a 1,000+ line behavioral override. Drop this single file into your AI, and it transforms from a helpful assistant into a ruthless, production-grade Senior Engineer.
+Default AI is lazy. It hallucinates, it skips verification, and it says "Let's delve" while writing bad code. GodPrompt is an 800+ line behavioral override. Drop this single file into your AI, and it transforms from a helpful assistant into a ruthless, production-grade Senior Engineer.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blueviolet)](https://docs.anthropic.com)
@@ -34,8 +34,10 @@ git clone https://github.com/AKzar1el/GodPrompt.git .claude/skills/god-prompt
 
 **Option C — Claude.ai Projects**
 1. Create a new Claude Project
-2. Add `core/00-THE-SKILL.md` contents as Project Instructions
-3. Upload the 3 reference files (`core/01-PROTOCOLS.md`, `core/02-GATES.md`, `core/03-ANTI-PATTERNS.md`) as Project Knowledge
+2. Add `core/00-THE-SKILL.md` as Project Instructions
+3. Upload the three reference files (`core/01-PROTOCOLS.md`, `core/02-GATES.md`, `core/03-ANTI-PATTERNS.md`) as Project Knowledge
+
+If you want a single paste target, use `GodPrompt.md`. If you want progressive disclosure and a smaller always-on context footprint, use the `core/` folder layout.
 
 **Then just use Claude normally.** No special commands, no mode switching, no skill invocations. GodPrompt activates automatically on every task.
 
@@ -65,7 +67,7 @@ Every task — from fixing a typo to architecting a system — flows through the
 
 ### Auto-Classification
 
-GodPrompt detects 9 task types and routes to the right protocol:
+GodPrompt detects 9 primary task types and routes to the right protocol. Simple lookups fall through to a direct `ANSWER` path.
 
 | Task Type | Triggers On | Key Protocol |
 |-----------|------------|--------------|
@@ -83,26 +85,28 @@ GodPrompt detects 9 task types and routes to the right protocol:
 
 ```
 GodPrompt/
-├── GodPrompt.md              # All-in-one file for quick deployment (1,145 lines)
+├── GodPrompt.md              # All-in-one file for quick deployment
 ├── core/
-│   ├── 00-THE-SKILL.md       # Core skill — always in context (248 lines)
-│   ├── 01-PROTOCOLS.md       # Deep execution guides per task type (373 lines)
-│   ├── 02-GATES.md           # Verification checklists & report templates (309 lines)
-│   └── 03-ANTI-PATTERNS.md   # Red flags, rationalizations, recovery (201 lines)
+│   ├── 00-THE-SKILL.md       # Core protocol loaded every message
+│   ├── 01-PROTOCOLS.md       # Deep execution guides per task type
+│   ├── 02-GATES.md           # Verification checklists and report templates
+│   └── 03-ANTI-PATTERNS.md   # Red flags, rationalizations, and recovery
+├── index.html                # Static landing page
+├── .github/workflows/deploy.yml
 ├── README.md
 ├── CHANGELOG.md
 ├── LICENSE
 └── VERSION
 ```
 
-**Total: ~41KB / 1,145 lines** — synthesized from 30+ battle-tested skills and hundreds of real coding sessions.
+**Single-file payload:** about 42 KB / 800+ lines in `GodPrompt.md` — synthesized from 30+ battle-tested skills and hundreds of real coding sessions.
 
 ### Progressive Disclosure Architecture
 
 This is the key design advantage over multi-skill systems:
 
-- **00-THE-SKILL.md** (248 lines) loads every message → low token cost, covers 90% of tasks
-- **01-PROTOCOLS.md**, **02-GATES.md**, **03-ANTI-PATTERNS.md** load only when Claude needs deep protocol detail → saves tokens on simple tasks
+- **00-THE-SKILL.md** stays in the hot path → low token cost, covers the universal protocol and task routing
+- **01-PROTOCOLS.md**, **02-GATES.md**, **03-ANTI-PATTERNS.md** load only when deeper execution detail is needed → saves tokens on simpler tasks
 - **GodPrompt.md** exists as a combined single file for environments that don't support folder structures
 
 A 34-skill system loads the wrong skill (or none) half the time. GodPrompt loads the right rules every time, and only goes deep when the task requires it.
@@ -139,7 +143,7 @@ Plus patterns from real-world production usage:
 |--|-----------|-----------------------------------|
 | **Skills to manage** | 1 | 34+ |
 | **User needs to pick the right skill** | No — auto-detects | Yes — manual selection |
-| **Context window cost** | ~248 lines base | Varies per skill loaded |
+| **Context window cost** | Lean base context via `core/00-THE-SKILL.md` | Varies per skill loaded |
 | **Covers mixed tasks** | Yes — handles BUILD+DEBUG+SHIP in one session | Requires switching between skills |
 | **Learning curve** | Zero — just use Claude | Must learn when to invoke each skill |
 | **Risk of using wrong workflow** | None — routing is automatic | High — wrong skill = wrong process |
@@ -156,7 +160,7 @@ Three design insights:
 
 2. **Quality failures have patterns** — they're almost always: skipping the understand phase, changing things outside scope, or claiming completion without verification. The Three Iron Laws prevent all three.
 
-3. **Progressive disclosure beats upfront complexity** — 248 lines in context, 1,145 when you need depth. Never all-or-nothing.
+3. **Progressive disclosure beats upfront complexity** — keep the core in context, pull in depth only when needed. Never all-or-nothing.
 
 ## Roadmap
 
