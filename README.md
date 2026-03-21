@@ -1,6 +1,6 @@
 # GodPrompt
 
-Default AI is lazy. It hallucinates, it skips verification, and it says "Let's delve" while writing bad code. GodPrompt is a 1,100+ line behavioral override. Drop this single file into your AI, and it transforms from a helpful assistant into a ruthless, production-grade Senior Engineer.
+Default AI is lazy. It hallucinates, it skips verification, and it says "Let's delve" while writing bad code. GodPrompt is a 1,145-line behavioral override. Drop this single file into your AI, and it transforms from a helpful assistant into a ruthless, production-grade Senior Engineer.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blueviolet)](https://docs.anthropic.com)
@@ -99,7 +99,7 @@ GodPrompt/
 └── VERSION
 ```
 
-**Single-file payload:** about 42 KB / 1,100+ lines in `GodPrompt.md` — synthesized from 30+ battle-tested skills and hundreds of real coding sessions.
+**Single-file payload:** about 41 KB / 1,145 lines in `GodPrompt.md` — synthesized from 30+ battle-tested skills and hundreds of real coding sessions.
 
 ### Progressive Disclosure Architecture
 

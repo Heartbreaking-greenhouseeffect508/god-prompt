@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **01-PROTOCOLS.md** — deep execution guides: BUILD (TDD), DEBUG (root cause + 4-layer defense), REFACTOR, CONTENT (SEO + affiliate), DESIGN (anti-AI-slop), SHIP, ANALYZE, AUTOMATE, PLAN
 - **02-GATES.md** — verification checklists per task type, universal gate (5 checks every task), delivery report template
 - **03-ANTI-PATTERNS.md** — red flags, rationalization prevention tables, partner signal recognition, test anti-patterns, recovery playbook
-- **GodPrompt.md** —  the 1,100+ line single-file payload for quick deployment
+- **GodPrompt.md** — 1,145-line single-file payload for quick deployment
 - MIT license, contributing guide, changelog
 
 ### Design Decisions
