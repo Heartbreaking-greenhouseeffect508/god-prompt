@@ -34,8 +34,8 @@ git clone https://github.com/AKzar1el/GodPrompt.git .claude/skills/god-prompt
 
 **Option C — Claude.ai Projects**
 1. Create a new Claude Project
-2. Add `00-THE-SKILL.md` contents as Project Instructions
-3. Upload the 3 reference files (`01-PROTOCOLS.md`, `02-GATES.md`, `03-ANTI-PATTERNS.md`) as Project Knowledge
+2. Add `core/00-THE-SKILL.md` contents as Project Instructions
+3. Upload the 3 reference files (`core/01-PROTOCOLS.md`, `core/02-GATES.md`, `core/03-ANTI-PATTERNS.md`) as Project Knowledge
 
 **Then just use Claude normally.** No special commands, no mode switching, no skill invocations. GodPrompt activates automatically on every task.
 
@@ -84,10 +84,11 @@ GodPrompt detects 9 task types and routes to the right protocol:
 ```
 GodPrompt/
 ├── GodPrompt.md              # All-in-one file for quick deployment (1,145 lines)
-├── 00-THE-SKILL.md           # Core skill — always in context (248 lines)
-├── 01-PROTOCOLS.md           # Deep execution guides per task type (373 lines)
-├── 02-GATES.md               # Verification checklists & report templates (309 lines)
-├── 03-ANTI-PATTERNS.md       # Red flags, rationalizations, recovery (201 lines)
+├── core/
+│   ├── 00-THE-SKILL.md       # Core skill — always in context (248 lines)
+│   ├── 01-PROTOCOLS.md       # Deep execution guides per task type (373 lines)
+│   ├── 02-GATES.md           # Verification checklists & report templates (309 lines)
+│   └── 03-ANTI-PATTERNS.md   # Red flags, rationalizations, recovery (201 lines)
 ├── README.md
 ├── CHANGELOG.md
 ├── LICENSE

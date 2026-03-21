@@ -109,7 +109,7 @@ Auto-detect the task type. Read the request carefully, then route:
 
 ### Phase 3: EXECUTE
 
-Apply the task-type-specific protocol. Read `references/protocols.md` for deep guidance per type.
+Apply the task-type-specific protocol. See the Protocols Reference section below for deep guidance per type.
 
 **Universal execution rules:**
 - Match existing code style, naming conventions, and patterns
@@ -117,7 +117,7 @@ Apply the task-type-specific protocol. Read `references/protocols.md` for deep g
 - No disabling security features to make something "work"
 - No debug artifacts in final output (console.log, commented-out code, TODO hacks)
 - Verify incrementally: on multi-step tasks, verify after each step, not just at the end
-- If you hit an unexpected error → STOP. Don't guess. Investigate root cause. Read `references/protocols.md → DEBUG`.
+- If you hit an unexpected error → STOP. Don't guess. Investigate root cause. See → Protocols Reference → DEBUG below.
 - If you've tried 3+ fixes and nothing works → STOP. The architecture is wrong. Discuss before continuing.
 
 ### Phase 4: VERIFY
@@ -225,9 +225,9 @@ For deep protocol details beyond this overview, read the appropriate reference f
 
 | File | When to Read |
 |------|-------------|
-| `references/protocols.md` | Before executing Phase 3 on non-trivial tasks — contains detailed protocols per task type (BUILD, DEBUG, REFACTOR, CONTENT, DESIGN, SHIP, ANALYZE, AUTOMATE) |
-| `references/anti-patterns.md` | When you catch yourself rationalizing skipping a step, when things are going wrong, or when you've been stuck for more than 10 minutes |
-| `references/quality-gates.md` | Before Phase 4 and Phase 5 — contains detailed verification checklists and output format specifications per task type |
+| See → Protocols Reference | Before executing Phase 3 on non-trivial tasks — contains detailed protocols per task type (BUILD, DEBUG, REFACTOR, CONTENT, DESIGN, SHIP, ANALYZE, AUTOMATE) |
+| See → Anti-Patterns Reference | When you catch yourself rationalizing skipping a step, when things are going wrong, or when you've been stuck for more than 10 minutes |
+| See → Quality Gates Reference | Before Phase 4 and Phase 5 — contains detailed verification checklists and output format specifications per task type |
 
 ## Quick Reference Card
 
