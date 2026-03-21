@@ -17,8 +17,8 @@ export function MetricCard({
   subtitle,
 }: MetricCardProps) {
   const hasChange = change !== undefined;
-  const isPositive = hasChange && change > 0;
-  const isNegative = hasChange && change < 0;
+  const isPositive = change > 0;
+  const isNegative = change < 0;
 
   return (
     <div className="rounded-lg border border-border bg-card p-5">
