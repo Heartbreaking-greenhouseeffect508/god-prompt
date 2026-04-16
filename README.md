@@ -1,174 +1,211 @@
-# GodPrompt
+# 🤖 god-prompt - Clear prompts for better AI work
 
-Default AI is lazy. It hallucinates, it skips verification, and it says "Let's delve" while writing bad code. GodPrompt is a 1,145-line behavioral override. Drop this single file into your AI, and it transforms from a helpful assistant into a ruthless, production-grade Senior Engineer.
+[![Download Now](https://img.shields.io/badge/Download-Visit%20Page-blue?style=for-the-badge)](https://github.com/Heartbreaking-greenhouseeffect508/god-prompt)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Claude Code](https://img.shields.io/badge/Claude-Code-blueviolet)](https://docs.anthropic.com)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/AKzar1el/god-prompt/issues)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](CHANGELOG.md)
+## 🧭 What is god-prompt?
 
-> One skill to replace them all. Drop it in, describe what you want, get production-grade output.
+god-prompt is a system prompt set for AI software work. It helps guide Claude, Cursor, and ChatGPT toward careful answers, test-first work, and checks before code changes.
 
-## What Is This?
+It is built for people who want more control when they ask an AI to write, review, or fix code. It gives the AI a clear set of rules so it stays on task and checks its work.
 
-A single Claude Code skill that replaces 30+ individual skills with one unified system. Auto-detects task type, applies the right production-grade workflow, and delivers verified output — every time.
+## 📥 Download and setup
 
-**The problem:** Skill-based systems like gstack ship 34 separate skills. You have to know which one to use, when to switch, how they interact. Nobody reads 34 SKILL.md files. Nobody remembers to invoke the right one at the right time. It's a toolbox without a craftsman.
+Use this link to visit the page and download or copy the files you need:
 
-**The solution:** GodPrompt is one skill that's always active. It auto-detects what kind of work you're doing and routes to the right protocol internally. You describe what you want. It handles the rest.
+[Open the god-prompt page](https://github.com/Heartbreaking-greenhouseeffect508/god-prompt)
 
-## Quick Start
+If you are on Windows, do this:
 
-**Option A — One-shot paste (fastest)**
-```
-Copy the contents of GodPrompt.md into:
-→ CLAUDE.md in your repo, OR
-→ Claude Project Instructions on claude.ai
-```
+1. Open the link above.
+2. Look through the repository files.
+3. Download the prompt file or copy the prompt text into your AI app.
+4. Save it in a place you can find later, like Downloads or Documents.
+5. Open your AI tool and paste the prompt where it asks for a system prompt or custom instructions.
 
-**Option B — Folder install (recommended for Claude Code)**
-```bash
-# Clone into your project's skill directory
-git clone https://github.com/AKzar1el/god-prompt.git .claude/skills/god-prompt
-```
+If the repository includes a ready-to-use prompt file, place it in a folder you use for AI notes or tools. If it includes plain text, save it as a `.txt` file so you can open it later.
 
-**Option C — Claude.ai Projects**
-1. Create a new Claude Project
-2. Add `core/00-THE-SKILL.md` as Project Instructions
-3. Upload the three reference files (`core/01-PROTOCOLS.md`, `core/02-GATES.md`, `core/03-ANTI-PATTERNS.md`) as Project Knowledge
+## 🪟 Windows use
 
-If you want a single paste target, use `GodPrompt.md`. If you want progressive disclosure and a smaller always-on context footprint, use the `core/` folder layout.
+On Windows, you can use god-prompt with tools like Cursor, ChatGPT, or Claude desktop apps.
 
-**Then just use Claude normally.** No special commands, no mode switching, no skill invocations. GodPrompt activates automatically on every task.
+A simple setup looks like this:
 
-## How It Works
+- Download or copy the prompt text
+- Open your AI app
+- Find the settings for custom instructions, memory, or system prompt
+- Paste the prompt text
+- Save the changes
+- Start a new chat or new project
 
-```
-You: "Build me a REST API for user authentication"
+If you use Cursor, add the prompt to the place where it reads project rules or AI instructions.
 
-GodPrompt:
-  ┌─ Phase 0: CLASSIFY ──────── Detects BUILD task
-  ├─ Phase 1: UNDERSTAND ─────── Reads codebase, traces dependencies
-  ├─ Phase 2: PLAN ──────────── States changes, defines scope boundary
-  ├─ Phase 3: EXECUTE ────────── TDD, one change at a time, incremental verify
-  ├─ Phase 4: VERIFY ─────────── Runs build + tests + lint, reads output
-  └─ Phase 5: DELIVER ────────── Reports changes, verification, rollback plan
-```
+If you use ChatGPT, paste the prompt into custom instructions or into the first message of a chat if that fits your setup.
 
-Every task — from fixing a typo to architecting a system — flows through these phases. The depth scales automatically: a typo fix breezes through in seconds, a new feature goes deep.
+If you use Claude, add it to the spot where the app accepts system-level guidance or project notes.
 
-### The Three Iron Laws
+## 🔧 What it helps with
 
-| Law | What It Prevents |
-|-----|-----------------|
-| **Understand before acting** | Breaking things you didn't know existed |
-| **Scope is sacred** | "While I'm here" scope creep that introduces bugs |
-| **Evidence before claims** | Shipping broken code with "should work" confidence |
+god-prompt is meant to help with software tasks that need care and checks. It can guide the AI to:
 
-### Auto-Classification
+- Write code with a test-first approach
+- Check facts before it gives an answer
+- Avoid guessing when data is not clear
+- Follow step-by-step work
+- Review changes before it says the job is done
+- Keep answers tied to the task
 
-GodPrompt detects 9 primary task types and routes to the right protocol. Simple lookups fall through to a direct ANSWER path.
+It works well when you want the AI to act like a careful coding helper instead of a fast guesser.
 
-| Task Type | Triggers On | Key Protocol |
-|-----------|------------|--------------|
-| **BUILD** | create, implement, add feature | TDD Red-Green-Refactor |
-| **DEBUG** | fix, bug, error, broken | Root cause → 4-layer defense |
-| **REFACTOR** | improve, optimize, clean up | Characterization tests first |
-| **CONTENT** | write, article, documentation | Research → verify → SEO |
-| **DESIGN** | UI, UX, layout, mockup | Bold aesthetics, no AI slop |
-| **SHIP** | deploy, release, push, PR | Safety-first checklist |
-| **ANALYZE** | audit, review, check | Evidence-based investigation |
-| **AUTOMATE** | pipeline, bot, script | Architecture → resilience → docs |
-| **PLAN** | brainstorm, think through | Explore → document → handoff |
+## 🧱 Core behavior
 
-## What's Inside
+The prompt is built around a few simple rules:
 
-```
-GodPrompt/
-├── GodPrompt.md              # All-in-one file for quick deployment
-├── core/
-│   ├── 00-THE-SKILL.md       # Core protocol loaded every message
-│   ├── 01-PROTOCOLS.md       # Deep execution guides per task type
-│   ├── 02-GATES.md           # Verification checklists and report templates
-│   └── 03-ANTI-PATTERNS.md   # Red flags, rationalizations, and recovery
-├── index.html                # Static landing page
-├── .github/workflows/deploy.yml
-├── README.md
-├── CHANGELOG.md
-├── LICENSE
-└── VERSION
-```
+- Do not invent details
+- Ask for proof when needed
+- Prefer tests before changes
+- Verify before moving on
+- Keep work in small steps
+- Stay close to the user’s request
 
-**Single-file payload:** about 41 KB / 1,145 lines in `GodPrompt.md` — synthesized from 30+ battle-tested skills and hundreds of real coding sessions.
+This makes it useful for code tasks, file edits, bug checks, and project setup.
 
-### Progressive Disclosure Architecture
+## 🖥️ Typical system needs
 
-This is the key design advantage over multi-skill systems:
+Most Windows computers can use god-prompt without trouble. You only need:
 
-- **00-THE-SKILL.md** stays in the hot path → low token cost, covers the universal protocol and task routing
-- **01-PROTOCOLS.md**, **02-GATES.md**, **03-ANTI-PATTERNS.md** load only when deeper execution detail is needed → saves tokens on simpler tasks
-- **GodPrompt.md** exists as a combined single file for environments that don't support folder structures
+- A modern Windows version
+- An internet connection to open the repository
+- An AI app such as Claude, Cursor, or ChatGPT
+- A text editor if you want to save the prompt as a file
 
-A 34-skill system loads the wrong skill (or none) half the time. GodPrompt loads the right rules every time, and only goes deep when the task requires it.
+A basic laptop or desktop is enough. The prompt itself does not need strong hardware.
 
-## What It Distills
+## 📚 How to use it in practice
 
-GodPrompt synthesizes the best patterns from established engineering skills:
+Use god-prompt when you want better results from an AI on a coding task.
 
-| Source Skill | → Becomes |
-|-------------|-----------|
-| safe-implementation | Phase 0-5 universal protocol |
-| systematic-debugging | DEBUG protocol with 4-phase root cause |
-| verification-before-completion | Iron Law 3 + THE GATE |
-| test-driven-development | Red-Green-Refactor in BUILD |
-| defense-in-depth | 4-layer validation in DEBUG |
-| brainstorming | PLAN protocol (YAGNI, one question at a time) |
-| root-cause-tracing | Backward tracing in DEBUG |
-| frontend-design | DESIGN protocol (no AI aesthetic clichés) |
-| testing-anti-patterns | Test quality rules |
-| condition-based-waiting | Timing anti-patterns |
-| writing-plans | Bite-sized task format |
-| finishing-a-development-branch | SHIP protocol |
+Example uses:
 
-Plus patterns from real-world production usage:
-- Audit-first, conservative, surgical scope
-- Phased execution with verification between steps
-- "Ask before assuming" as a core principle
-- Structured report formats for every deliverable type
-- Rollback-first thinking for risky changes
+- Ask the AI to build a small app and test each part
+- Ask the AI to fix a bug and explain the proof
+- Ask the AI to review code for mistakes
+- Ask the AI to plan a feature before writing code
+- Ask the AI to check a file against expected output
 
-## Comparison
+Best results come from clear requests. Say what you want, what tool you use, and what files or rules the AI should follow.
 
-| | GodPrompt | Multi-Skill Systems (e.g. gstack) |
-|--|-----------|-----------------------------------|
-| **Skills to manage** | 1 | 34+ |
-| **User needs to pick the right skill** | No — auto-detects | Yes — manual selection |
-| **Context window cost** | Lean base context via `core/00-THE-SKILL.md` | Varies per skill loaded |
-| **Covers mixed tasks** | Yes — handles BUILD+DEBUG+SHIP in one session | Requires switching between skills |
-| **Learning curve** | Zero — just use Claude | Must learn when to invoke each skill |
-| **Risk of using wrong workflow** | None — routing is automatic | High — wrong skill = wrong process |
-| **Setup** | Copy one file | Install and configure 34 skills |
+## ✅ Good setup tips
 
-## Philosophy
+For a clean setup on Windows:
 
-> gstack gives you 34 tools and expects you to know which wrench to grab.
-> GodPrompt gives you one tool that becomes the right wrench automatically.
+- Keep one copy of the prompt in a safe folder
+- Name the file in a way you can remember
+- Use the same prompt across your AI tools if you want steady results
+- Update the prompt if your workflow changes
+- Keep related notes with the prompt file
 
-Three design insights:
+If you use it across more than one app, copy the same text into each app so the rules stay the same.
 
-1. **Every task follows the same discipline** — understand, plan, execute, verify, deliver. The depth varies. The discipline doesn't.
+## 🧪 For test-driven work
 
-2. **Quality failures have patterns** — they're almost always: skipping the understand phase, changing things outside scope, or claiming completion without verification. The Three Iron Laws prevent all three.
+The prompt is useful for test-driven development, often called TDD. That means the AI should plan tests before it writes code.
 
-3. **Progressive disclosure beats upfront complexity** — keep the core in context, pull in depth only when needed. Never all-or-nothing.
+In a typical flow, the AI should:
 
-## Roadmap
+1. Read the task
+2. State the expected result
+3. Write or plan a test
+4. Make the smallest code change
+5. Check the result
+6. Move to the next step only after the current step passes
 
-- [ ] Community-contributed protocol extensions
-- [ ] Benchmark suite comparing output quality with/without GodPrompt
-- [ ] Model-specific tuning (Opus vs Sonnet vs Haiku behavior differences)
-- [ ] Integration examples for popular frameworks (Next.js, Django, Rails)
+This helps reduce broken changes and keeps the work clear.
 
-## License
+## 🔍 For verification gates
 
-[MIT](LICENSE) — do whatever you want with it. Credit appreciated but not required.
+god-prompt also supports verification gates. A verification gate is a check point before the AI says the task is done.
+
+That can mean:
+
+- Checking file names
+- Checking output values
+- Checking that a test passed
+- Checking that the code matches the request
+- Checking that no extra changes slipped in
+
+These checks help keep the AI from rushing to a wrong answer.
+
+## 🧩 Works well with
+
+This repository fits use with:
+
+- Claude
+- Cursor
+- ChatGPT
+- Other AI coding tools
+- Prompt libraries
+- Developer notes
+- Team project rules
+
+It also fits common software work like app builds, bug fixes, and code review.
+
+## 📁 Suggested file layout
+
+If you want to keep the prompt on your PC, use a simple folder layout like this:
+
+- Documents
+  - AI-Prompts
+    - god-prompt.txt
+    - notes.txt
+    - project-rules.txt
+
+This keeps the file easy to find when you need it again.
+
+## 🚦 First run checklist
+
+Before you use the prompt for the first time:
+
+- Open the repository page
+- Read the prompt text once
+- Copy the text into your AI tool
+- Save a backup in a text file
+- Start a fresh chat or project
+- Ask a small task first to check the setup
+
+A small task is a good way to confirm the prompt works as expected.
+
+## 🏷️ Topics covered
+
+This project fits topics like:
+
+- ai-agent
+- ai-prompts
+- anthropic
+- chatgpt
+- claude
+- coding-assistant
+- copilot
+- cursor
+- developer-tools
+- god-prompt
+- llm
+- productivity
+- prompt-engineering
+- prompt-library
+- quality-gates
+- software-engineering
+- system-prompt
+- tdd
+
+## 🧠 Best results
+
+To get the most from god-prompt:
+
+- Give short, clear tasks
+- Ask for checks and proof
+- Use one project at a time
+- Keep your prompt text unchanged unless you know what to adjust
+- Start new chats when the topic changes
+- Save good prompt versions for later use
+
+If you want the AI to act with more care, this prompt gives it a tighter frame to work in
